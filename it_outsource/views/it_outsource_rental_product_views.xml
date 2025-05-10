@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Server Tree View -->
+        <record id="view_server_tree" model="ir.ui.view">
+            <field name="name">it.outsource.product.tree ()</field>
+            <field name="model">it.outsource.product</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="type"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Server Form View -->
+        <record id="view_server_rental_product_form" model="ir.ui.view">
+            <field name="name">it.outsource.product.form</field>
+            <field name="model">it.outsource.product</field>
+            <field name="arch" type="xml">
+                <form string="Product">
+                    <sheet>
+
+                        <!-- Основні поля -->
+                        <group>
+                            <group col="2">
+                                <field name="name"/>
+                                <button name="action_generate_name"
+                                        string="Generate name"
+                                        type="object"
+                                        class="btn-sm btn-secondary"/>
+                            </group>
+                            <field name="type" widget="radio"/>
+                            <field name="price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                        </group>
+
+                        <!-- Технічні характеристики -->
+                        <group string="Server Specifications" invisible="type != 'server'">
+                            <field name="cpu_count"/>
+                            <field name="ram_gb"/>
+                            <field name="disk_space_gb"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Server Pivot View -->
+        <record id="view_server_pivot" model="ir.ui.view">
+            <field name="name">it.outsource.product.pivot(it_outsource_server)</field>
+            <field name="model">it.outsource.product</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <field name="price" type="measure"/>
+                    <field name="type" type="col"/>
+                    <field name="name" type="row"/>
+                </pivot>
+            </field>
+        </record>
+        <!-- Search View -->
+        <record id="view_server_search" model="ir.ui.view">
+            <field name="name">it.outsource.product.search</field>
+            <field name="model">it.outsource.product</field>
+            <field name="arch" type="xml">
+                <search>
+                    <searchpanel>
+                        <field name="type" select="multi"/>
+                    </searchpanel>
+
+                    <field name="name"/>
+                    <field name="type"/>
+                </search>
+            </field>
+        </record>
+        <!-- Server Action -->
+        <record id="it_outsource_action_server" model="ir.actions.act_window">
+            <field name="name">Servers</field>
+            <field name="res_model">it.outsource.product</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Add your first server
+                </p>
+            </field>
+        </record>
+
+        <!-- Server Menu -->
+        <menuitem id="menu_server_action"
+                  name="Services"
+                  parent="menu_server_rental_root"
+                  action="it_outsource_action_server"
+                  sequence="10"/>
+    </data>
+</odoo>

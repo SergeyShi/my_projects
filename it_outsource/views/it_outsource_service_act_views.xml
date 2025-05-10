@@ -1,0 +1,55 @@
+<odoo>
+    <!-- Action -->
+    <record id="action_service_report" model="ir.actions.act_window">
+        <field name="name">Work comletion certificate</field>
+        <field name="res_model">it.outsource.service.act</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Creat your first act</p>
+        </field>
+    </record>
+
+    <record id="view_service_report_tree" model="ir.ui.view">
+        <field name="name">it.outsource.service.act.tree</field>
+        <field name="model">it.outsource.service.act</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="report_date"/>
+                <field name="contract_id"/>
+                <field name="amount"/>
+                <field name="currency_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_service_report_form" model="ir.ui.view">
+        <field name="name">it.outsource.service.act.form</field>
+        <field name="model">it.outsource.service.act</field>
+        <field name="arch" type="xml">
+            <form string="Work Completion Certificates">
+                <sheet>
+                    <group>
+                        <field name="name" readonly="1"/>
+                        <field name="report_date"/>
+                        <field name="contract_id"/>
+                        <field name="description"/>
+                        <field name="amount"/>
+                        <field name="currency_id"/>
+                    </group>
+                    <footer>
+                        <button name="print_report" string="Print PDF" type="object" class="btn-primary"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+<!--    &lt;!&ndash; Menu &ndash;&gt;-->
+<!--    <menuitem id="menu_service_report"-->
+<!--              name="Акти"-->
+<!--              parent="menu_service_report_root"-->
+<!--              action="action_service_report"-->
+<!--              sequence="10"/>-->
+</odoo>

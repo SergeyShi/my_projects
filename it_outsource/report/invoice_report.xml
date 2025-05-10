@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <record id="action_report_server_rental_invoice" model="ir.actions.report">
+        <field name="name">Invoice</field>
+        <field name="model">it.outsource.invoice</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">it_outsource.report_server_rental_invoice_document</field>
+        <field name="report_file">it_outsource.report_server_rental_invoice_document</field>
+        <field name="print_report_name">(object._get_report_base_filename())
+        </field>
+        <field name="attachment"/>
+        <field name="binding_model_id" ref="model_it_outsource_invoice"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

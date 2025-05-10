@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Wizard Form View -->
+    <record id="view_invoice_wizard_form" model="ir.ui.view">
+        <field name="name">it.outsource.invoice.wizard.form</field>
+        <field name="model">it.outsource.invoice.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="date"/>
+                        <field name="include_active"/>
+                        <field name="include_expiring"/>
+                        <field name="days_to_expire"
+                               invisible="not include_expiring"/>
+                    </group>
+                    <footer>
+                        <button name="action_generate_invoices" string="Generate Invoices" type="object"
+                                class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Wizard Action -->
+    <record id="action_invoice_wizard" model="ir.actions.act_window">
+        <field name="name">Generate Monthly Invoices</field>
+        <field name="res_model">it.outsource.invoice.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_invoice_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Add to Menu -->
+    <menuitem id="menu_invoice_wizard"
+              name="Generate Invoices"
+              parent="menu_server_rental_invoices"
+              action="action_invoice_wizard"
+              sequence="20"/>
+</odoo>

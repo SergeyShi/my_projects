@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Partner Form View Extension -->
+        <record id="view_partner_form_inherit" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Server Rental" invisible="is_rental_client == False">
+                        <group>
+                            <field name="is_rental_client"/>
+                            <field name="rental_client_since"/>
+                        </group>
+                        <group>
+                            <field name="rental_contract_ids" mode="kanban">
+                                <kanban>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div class="oe_kanban_global_click o_kanban_card">
+                                                <div class="o_kanban_details">
+                                                    <strong>
+                                                        <field name="name"/>
+                                                    </strong>
+                                                    <br/>
+                                                    <span>
+                                                        <field name="monthly_total"/>
+                                                        €/month
+                                                    </span>
+                                                    <br/>
+                                                    <span>
+                                                        <field name="state" widget="statusbar"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                            </field>
+                        </group>
+                        <group>
+                            <field name="rental_notes"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</odoo>

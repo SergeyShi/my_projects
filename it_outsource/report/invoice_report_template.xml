@@ -1,0 +1,125 @@
+<odoo>
+    <template id="report_server_rental_invoice_document">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <t t-foreach="docs" t-as="doc">
+                        <h2>Invoice</h2>
+
+                        <!-- Інформація у дві колонки -->
+                        <div class="mb-4 d-flex" style="gap: 40px;">
+                            <!-- Ліва колонка: клієнт і контракт -->
+                            <div>
+                                <p>
+                                    <strong>Client:</strong>
+                                    <span t-esc="doc.contract_id.partner_id.name"/>
+                                </p>
+                                <p>
+                                    <strong>Contract:</strong>
+                                    <span t-esc="doc.contract_id.name"/>
+                                </p>
+                            </div>
+
+                            <!-- Права колонка: номер, дати -->
+                            <div>
+                                <p>
+                                    <strong>Invoice No:</strong>
+                                    <span t-esc="doc.name"/>
+                                </p>
+                                <p>
+                                    <strong>Date:</strong>
+                                    <span t-esc="doc.date" t-options='{"widget": "date"}'/>
+                                </p>
+                                <p>
+                                    <strong>Due Date:</strong>
+                                    <span t-esc="doc.due_date" t-options='{"widget": "date"}'/>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Таблиця послуг -->
+                        <h4>Services</h4>
+                        <t t-if="doc.line_ids">
+                            <table class="table table-sm table-bordered">
+                                <thead style="background-color: #007BFF; color: white;">
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Description</th>
+                                        <th>Quantity</th>
+                                        <th class="text-end">Price</th>
+                                        <th class="text-end">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="doc.line_ids" t-as="line">
+                                        <tr>
+                                            <td>
+                                                <span t-esc="line.product_id.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="line.description"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="line.quantity"/>
+                                            </td>
+                                            <td class="text-end">
+                                                <span t-esc="line.price_unit"
+                                                      t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                            </td>
+                                            <td class="text-end">
+                                                <span t-esc="line.amount"
+                                                      t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </t>
+                        <t t-else="">
+                            <div class="alert alert-warning">No service lines available.</div>
+                        </t>
+
+                        <!-- Підсумки -->
+                        <div class="mt-4 text-end">
+                            <p>
+                                <strong>Total:</strong>
+                                <span t-field="doc.amount"
+                                      t-options='{"widget": "monetary", "display_currency": doc.currency_id}'
+                                      style="background-color: #007BFF; color: white; padding: 4px 8px; border-radius: 4px;"/>
+                            </p>
+                            <p>
+                                <strong>Paid:</strong>
+                                <t t-if="doc.paid_amount">
+                                <span t-field="doc.paid_amount"
+                                      t-options='{"widget": "monetary", "display_currency": doc.currency_id}'
+                                      style="background-color: #007BFF; color: white; padding: 4px 8px; border-radius: 4px;"/>
+                                </t>
+                                <t t-else="">
+                                    <span t-field="doc.paid_amount"
+                                          t-options='{"widget": "monetary", "display_currency": doc.currency_id}'
+                                          style="background-color: #ff0000; color: white; padding: 4px 8px; border-radius: 4px;"/>
+                                </t>
+                            </p>
+                            <p>
+                                <strong>Due:</strong>
+                                <span t-field="doc.residual"
+                                      t-options='{"widget": "monetary", "display_currency": doc.currency_id}'
+                                      style="background-color: #007BFF; color: white; padding: 4px 8px; border-radius: 4px;"/>
+                            </p>
+                        </div>
+                        <!-- Підпис або додаткова інформація -->
+                        <div class="mt-4 text-right">
+                            <small>
+                                Printed:
+                                <t t-esc="datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+                                |
+                                City:
+                                <!-- <t t-esc="company.city or ''"/>-->
+                            </small>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

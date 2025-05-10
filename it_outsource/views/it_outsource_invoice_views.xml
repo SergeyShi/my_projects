@@ -1,0 +1,170 @@
+<odoo>
+    <!-- Invoice Tree View -->
+    <record id="view_invoice_tree" model="ir.ui.view">
+        <field name="name">it.outsource.invoice.tree</field>
+        <field name="model">it.outsource.invoice</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="contract_id"/>
+                <field name="date"/>
+                <field name="due_date"/>
+                <field name="amount"/>
+                <field name="state"/>
+                <field name="residual"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Invoice Form View -->
+    <record id="view_invoice_form" model="ir.ui.view">
+        <field name="name">it.outsource.invoice.form</field>
+        <field name="model">it.outsource.invoice</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" options="{'clickable':'1'}"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="contract_id"/>
+                            <field name="date"/>
+                            <field name="due_date"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Services">
+                            <field name="line_ids">
+                                <tree editable="bottom">
+                                    <field name="product_type"/>
+                                    <field name="product_id" domain="[('type', '=', product_type)]"/>
+                                    <field name="description"/>
+                                    <field name="quantity"/>
+                                    <field name="price_unit"/>
+                                    <field name="amount" readonly="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                    <div class="row mt16">
+                        <div class="col-12">
+                            <div class="d-flex justify-content-end">
+                                <div class="o_form_sheet bg-white">
+                                    <group>
+                                        <field name="amount" readonly="1"
+                                               widget="monetary"
+                                               options="{'currency_field': 'currency_id'}"/>
+                                        <field name="paid_amount" readonly="1"
+                                               widget="monetary"
+                                               options="{'currency_field': 'currency_id'}"/>
+                                        <field name="residual" readonly="1"
+                                               widget="monetary"
+                                               options="{'currency_field': 'currency_id'}"/>
+                                    </group>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </sheet>
+
+                <sheet>
+                    <group string="Payments">
+                        <field name="payment_ids" mode="kanban">
+                            <kanban>
+                                <field name="name"/>
+                                <field name="date"/>
+                                <field name="amount"/>
+                                <field name="payment_method"/>
+                                <templates>
+                                    <t t-name="kanban-box">
+                                        <div class="oe_kanban_global_click" style="padding: 8px; min-height: 80px;">
+                                            <div>
+                                                <strong>
+                                                    <field name="amount"/>
+                                                </strong>
+                                                <small class="text-muted d-block">
+                                                    <field name="payment_method"/>
+                                                </small>
+                                                <small class="text-muted">
+                                                    <field name="date"/>
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </templates>
+                            </kanban>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- 🔎 Search View with date filter -->
+    <record id="view_invoice_search" model="ir.ui.view">
+        <field name="name">it.outsource.invoice.search</field>
+        <field name="model">it.outsource.invoice</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="this_month" string="This Month" domain="[('date','>=',context_today().replace(day=1))]"/>
+                <filter name="this_year" string="This Year"
+                        domain="[('date','>=',context_today().replace(month=1, day=1))]"/>
+                <field name="date" filter_domain="[['date', '=', self]]"/>
+                <field name="contract_id"/>
+                <field name="state"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- 📊 Pivot View -->
+    <record id="view_invoice_pivot" model="ir.ui.view">
+        <field name="name">it.outsource.invoice.pivot</field>
+        <field name="model">it.outsource.invoice</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="amount" type="measure"/>
+<!--                <field name="residual" type="measure"/>-->
+                <field name="date" type="row"/>
+                <field name="contract_id" type="col"/>
+                <field name="state" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- 📈 Graph View -->
+    <record id="view_invoice_graph" model="ir.ui.view">
+        <field name="name">it.outsource.invoice.graph</field>
+        <field name="model">it.outsource.invoice</field>
+        <field name="arch" type="xml">
+            <graph string="Invoice Analysis" type="bar">
+                <field name="date" type="row"/>
+                <field name="contract_id" type="col"/>
+                <field name="amount" type="measure"/>
+<!--                <field name="residual" type="measure"/>-->
+            </graph>
+        </field>
+    </record>
+
+    <!-- 📂 Action (with pivot) -->
+    <record id="action_invoice" model="ir.actions.act_window">
+        <field name="name">Invoices</field>
+        <field name="res_model">it.outsource.invoice</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
+        <field name="search_view_id" ref="view_invoice_search"/>
+    </record>
+
+    <!-- 📁 Menu -->
+    <menuitem id="menu_invoice_action"
+              name="Invoices"
+              parent="menu_server_rental_invoices"
+              action="action_invoice"
+              sequence="10"/>
+</odoo>

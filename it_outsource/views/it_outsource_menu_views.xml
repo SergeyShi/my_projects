@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- Main Menu -->
+        <menuitem
+                id="menu_server_rental_root"
+                name="Server Rental"
+                sequence="10"
+                web_icon="it_outsource,static/description/image(1).png"/>
+        
+        <!-- Servers Submenu -->
+        <menuitem
+                id="menu_server_rental_servers"
+                name="Services"
+                parent="menu_server_rental_root"
+                sequence="10"/>
+
+        
+        <!-- Contracts Submenu -->
+        <menuitem
+                id="menu_server_rental_contracts"
+                name="Contracts"
+                parent="menu_server_rental_root"
+                sequence="30"/>
+        
+        <!-- Invoices Submenu -->
+        <menuitem
+                id="menu_server_rental_invoices"
+                name="Invoices"
+                parent="menu_server_rental_root"
+                sequence="40"/>
+        
+        <!-- Payments Submenu -->
+        <menuitem
+                id="menu_server_rental_payments"
+                name="Payments"
+                parent="menu_server_rental_root"
+                sequence="50"/>
+
+        <menuitem id="menu_service_report_root"
+              name="Acts"
+              sequence="60"
+              parent="menu_server_rental_root"/>
+</odoo>

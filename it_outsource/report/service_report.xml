@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_report_service_report" model="ir.actions.report">
+        <field name="name">Work Completion Certificate</field>
+        <field name="model">it.outsource.service.act</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">it_outsource.report_service_report_document</field>
+        <field name="report_file">it_outsource.report_service_report_document</field>
+        <field name="print_report_name">(object._get_report_base_filename())
+        </field>
+<!--        <field name="attachment"/>-->
+<!--        <field name="binding_model_id" ref="model_it_outsource_act"/>-->
+<!--        <field name="binding_type">report</field>-->
+    </record>
+    <template id="report_service_report_document">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="page">
+                        <h2>Акт виконаних послуг</h2>
+                        <p>
+                            <strong>Номер акту:</strong>
+                            <t t-esc="doc.name"/>
+                        </p>
+                        <p>
+                            <strong>Дата:</strong>
+                            <t t-esc="doc.report_date"/>
+                        </p>
+                        <p>
+                            <strong>Клієнт:</strong>
+                            <t t-esc="doc.contract_id.partner_id.name"/>
+                        </p>
+                        <p>
+                            <strong>Опис послуг:</strong>
+                        </p>
+                        <p t-esc="doc.description"/>
+                        <p>
+                            <strong>Сума:</strong>
+                            <t t-esc="doc.amount"/>
+                            <t t-esc="doc.currency_id.name"/>
+                        </p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

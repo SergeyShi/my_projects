@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rental_product_user,it.outsource.product.user,model_it_outsource_product,group_rental_user,1,0,0,0
+access_rental_product_admin,it.outsource.product.admin,model_it_outsource_product,group_rental_admin,1,1,1,1
+access_contract_user,it.outsource.contract.user,model_it_outsource_contract,group_rental_user,1,0,0,0
+access_contract_admin,it.outsource.contract.admin,model_it_outsource_contract,group_rental_admin,1,1,1,1
+access_invoice_user,it.outsource.invoice.user,model_it_outsource_invoice,group_rental_user,1,0,0,0
+access_invoice_admin,it.outsource.invoice.admin,model_it_outsource_invoice,group_rental_admin,1,1,1,1
+access_invoice_line_user,it.outsource.invoice.line.user,model_it_outsource_invoice_line,group_rental_user,1,0,0,0
+access_invoice_line_admin,it.outsource.invoice.line.admin,model_it_outsource_invoice_line,group_rental_admin,1,1,1,1
+access_payment_user,it.outsource.payment.user,model_it_outsource_payment,group_rental_user,1,0,0,0
+access_payment_admin,it.outsource.payment.admin,model_it_outsource_payment,group_rental_admin,1,1,1,1
+access_server_rental_product,it.outsource.product,model_it_outsource_product,base.group_user,1,1,1,1
+access_invoice_wizard,access_invoice_wizard,model_it_outsource_invoice_wizard,base.group_user,1,1,1,0
+access_service_act_admin,it.outsource.service.act,model_it_outsource_service_act,group_rental_admin,1,1,1,1

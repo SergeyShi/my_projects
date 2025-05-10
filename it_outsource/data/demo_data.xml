@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Demo Servers -->
+<!--        <record id="demo_server_1" model="server.rental.server">-->
+<!--            <field name="name">Dell PowerEdge R740</field>-->
+<!--            <field name="hostname">server-001</field>-->
+<!--            <field name="ip_address">192.168.1.100</field>-->
+<!--            <field name="cpu">2x Intel Xeon Silver 4210</field>-->
+<!--            <field name="ram">64GB DDR4</field>-->
+<!--            <field name="storage">4x 1TB SSD RAID 10</field>-->
+<!--            <field name="os">Ubuntu Server 20.04</field>-->
+<!--            <field name="monthly_price">350</field>-->
+<!--        </record>-->
+<!--        -->
+<!--        <record id="demo_server_2" model="server.rental.server">-->
+<!--            <field name="name">HP ProLiant DL380</field>-->
+<!--            <field name="hostname">server-002</field>-->
+<!--            <field name="ip_address">192.168.1.101</field>-->
+<!--            <field name="cpu">2x AMD EPYC 7302</field>-->
+<!--            <field name="ram">128GB DDR4</field>-->
+<!--            <field name="storage">8x 2TB HDD RAID 5</field>-->
+<!--            <field name="os">CentOS 8</field>-->
+<!--            <field name="monthly_price">500</field>-->
+<!--        </record>-->
+
+<!--        &lt;!&ndash; Demo Services &ndash;&gt;-->
+<!--        <record id="demo_service_1" model="server.rental.service">-->
+<!--            <field name="name">24/7 Monitoring</field>-->
+<!--            <field name="code">MONITOR</field>-->
+<!--            <field name="monthly_price">50</field>-->
+<!--        </record>-->
+<!--        -->
+<!--        <record id="demo_service_2" model="server.rental.service">-->
+<!--            <field name="name">Daily Backups</field>-->
+<!--            <field name="code">BACKUP</field>-->
+<!--            <field name="monthly_price">30</field>-->
+<!--        </record>-->
+
+<!--        &lt;!&ndash; Demo Contracts &ndash;&gt;-->
+<!--        <record id="demo_contract_1" model="server.rental.contract">-->
+<!--            <field name="partner_id" ref="base.res_partner_1"/>-->
+<!--            <field name="start_date">2025-01-01</field>-->
+<!--            <field name="end_date">2025-12-31</field>-->
+<!--            <field name="state">active</field>-->
+<!--            <field name="server_ids" eval="[(6, 0, [ref('demo_server_1')])]"/>-->
+<!--            <field name="service_ids" eval="[(6, 0, [ref('demo_service_1'), ref('demo_service_2')])]"/>-->
+<!--        </record>-->
+
+        <!-- Demo Invoices -->
+        <record id="demo_invoice_1" model="it.outsource.invoice">
+            <field name="contract_id" ref="demo_contract_1"/>
+            <field name="date">2025-05-01</field>
+            <field name="state">sent</field>
+        </record>
+
+        <!-- Demo Payments -->
+        <record id="demo_payment_1" model="it.outsource.payment">
+            <field name="invoice_id" ref="demo_invoice_1"/>
+            <field name="amount">430</field>
+            <field name="payment_method">bank</field>
+        </record>
+    </data>
+</odoo>
