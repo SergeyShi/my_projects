@@ -12,3 +12,4 @@ access_payment_admin,it.outsource.payment.admin,model_it_outsource_payment,group
 access_server_rental_product,it.outsource.product,model_it_outsource_product,base.group_user,1,1,1,1
 access_invoice_wizard,access_invoice_wizard,model_it_outsource_invoice_wizard,base.group_user,1,1,1,0
 access_service_act_admin,it.outsource.service.act,model_it_outsource_service_act,group_rental_admin,1,1,1,1
+access_service_act_line_admin,it.outsource.service.act.line,model_it_outsource_service_act_line,group_rental_admin,1,1,1,1

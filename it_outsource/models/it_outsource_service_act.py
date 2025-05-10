@@ -34,17 +34,31 @@ class ServiceReport(models.Model):
         default=lambda self: self.env.company.currency_id
     )
 
-    def print_report(self):
-        return self.env.ref('it.outsource.action_report_service_report').report_action(self)
+    line_ids = fields.One2many(
+        comodel_name='it.outsource.service.act.line',
+        inverse_name='act_id',
+        string='Services'
+    )
 
-    def _get_report_base_filename(self):
-        """
-        Returns the base filename for the doctor's report.
-        """
-        return f'Invoice_{self.name}_{self.date}'
+    @api.depends('line_ids.subtotal')
+    def _compute_amount(self):
+        for rec in self:
+            rec.amount = sum(rec.line_ids.mapped('subtotal'))
+
 
     @api.model
     def create(self, vals):
         if vals.get('name', 'New') == 'New':
             vals['name'] = self.env['ir.sequence'].next_by_code('it.outsource.service.act') or 'New'
         return super().create(vals)
+
+
+    def print_report(self):
+        return self.env.ref('it_outsource.action_report_service_report').report_action(self)
+
+
+    def _get_report_base_filename(self):
+        """
+        Returns the base filename for the doctor's report.
+        """
+        return f'Invoice_{self.name}_{self.date}'

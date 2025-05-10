@@ -29,27 +29,48 @@
         <field name="model">it.outsource.service.act</field>
         <field name="arch" type="xml">
             <form string="Work Completion Certificates">
+                <header>
+                    <button name="print_report" string="Print PDF" type="object" class="btn-primary"/>
+                </header>
                 <sheet>
                     <group>
                         <field name="name" readonly="1"/>
                         <field name="report_date"/>
                         <field name="contract_id"/>
                         <field name="description"/>
-                        <field name="amount"/>
                         <field name="currency_id"/>
                     </group>
-                    <footer>
-                        <button name="print_report" string="Print PDF" type="object" class="btn-primary"/>
-                    </footer>
+                    <field name="line_ids">
+                        <tree editable="bottom">
+                            <field name="name"/>
+                            <field name="quantity"/>
+                            <field name="price_unit"/>
+                            <field name="subtotal" readonly="1"/>
+                        </tree>
+                    </field>
+                    <div class="row mt16">
+                        <div class="col-12">
+                            <div class="d-flex justify-content-end">
+                                <div class="o_form_sheet bg-white">
+                                    <group>
+                                        <field name="amount" readonly="1"
+                                               widget="monetary"
+                                               options="{'currency_field': 'currency_id'}"/>
+                                    </group>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </sheet>
+
             </form>
         </field>
     </record>
 
-<!--    &lt;!&ndash; Menu &ndash;&gt;-->
-<!--    <menuitem id="menu_service_report"-->
-<!--              name="Акти"-->
-<!--              parent="menu_service_report_root"-->
-<!--              action="action_service_report"-->
-<!--              sequence="10"/>-->
+    <!-- Menu -->
+    <menuitem id="menu_service_report"
+              name="Акти"
+              parent="menu_service_report_root"
+              action="action_service_report"
+              sequence="10"/>
 </odoo>

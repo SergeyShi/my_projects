@@ -4,4 +4,5 @@ from . import (it_outsource_rental_product,
                it_outsource_invoice_line,
                it_outsource_payment,
                it_outsource_service_act,
+               it_outsource_service_act_line,
                res_partner)

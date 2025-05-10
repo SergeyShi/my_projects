@@ -3,7 +3,7 @@
         <!-- Main Menu -->
         <menuitem
                 id="menu_server_rental_root"
-                name="Server Rental"
+                name="IT Outsource"
                 sequence="10"
                 web_icon="it_outsource,static/description/image(1).png"/>
         
