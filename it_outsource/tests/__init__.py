@@ -1,5 +1,6 @@
-from . import test_server
-from . import test_service
-from . import test_contract
-from . import test_invoice
-from . import test_payment
+from . import (test_contract,
+               test_invoice,
+               test_payment,
+               test_product,
+               test_service_act
+               )

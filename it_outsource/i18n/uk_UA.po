@@ -1,0 +1,962 @@
+# Ukrainian translations for it_outsource module.
+# Copyright (C) 2025 Odoo S.A.
+# This file is distributed under the same license as the it_outsource project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: it_outsource 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-11 10:43+0000\n"
+"PO-Revision-Date: 2025-05-11 10:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: Ukrainian <yourteam@example.com>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#. module: it_outsource
+#: model:ir.actions.report,print_report_name:it_outsource.action_report_server_rental_invoice
+#: model:ir.actions.report,print_report_name:it_outsource.action_report_service_report
+msgid ""
+"(object._get_report_base_filename())\n"
+" "
+msgstr ""
+"(object._get_report_base_filename())\n"
+" "
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_server_rental_invoice_document
+msgid "<strong>Client:</strong>"
+msgstr "<strong>Клієнт:</strong>"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_server_rental_invoice_document
+msgid "<strong>Contract:</strong>"
+msgstr "<strong>Договір:</strong>"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_server_rental_invoice_document
+msgid "<strong>Date:</strong>"
+msgstr "<strong>Дата:</strong>"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_server_rental_invoice_document
+msgid "<strong>Due Date:</strong>"
+msgstr "<strong>Термін оплати:</strong>"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_server_rental_invoice_document
+msgid "<strong>Due:</strong>"
+msgstr "<strong>До сплати:</strong>"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_server_rental_invoice_document
+msgid "<strong>Invoice No:</strong>"
+msgstr "<strong>Рахунок №:</strong>"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_server_rental_invoice_document
+msgid "<strong>Paid:</strong>"
+msgstr "<strong>Сплачено:</strong>"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_server_rental_invoice_document
+msgid "<strong>Total:</strong>"
+msgstr "<strong>Всього:</strong>"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_service_report_document
+msgid "<strong>Виконавець:</strong>"
+msgstr "<strong>Виконавець:</strong>"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_service_report_document
+msgid "<strong>Всього:</strong>"
+msgstr "<strong>Всього:</strong>"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_service_report_document
+msgid "<strong>Дата:</strong>"
+msgstr "<strong>Дата:</strong>"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_service_report_document
+msgid "<strong>Договір:</strong>"
+msgstr "<strong>Договір:</strong>"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_service_report_document
+msgid "<strong>Замовник:</strong>"
+msgstr "<strong>Замовник:</strong>"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_service_report_document
+msgid "<strong>Клієнт:</strong>"
+msgstr "<strong>Клієнт:</strong>"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_service_report_document
+msgid "<strong>Надані послуги:</strong>"
+msgstr "<strong>Надані послуги:</strong>"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_service_report_document
+msgid "<strong>Номер акту:</strong>"
+msgstr "<strong>Номер акту:</strong>"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_service_report_document
+msgid "<strong>Опис:</strong>"
+msgstr "<strong>Опис:</strong>"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act_line__act_id
+msgid "Act"
+msgstr "Акт"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__message_needaction
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__message_needaction
+msgid "Action Needed"
+msgstr "Потрібна дія"
+
+#. module: it_outsource
+#: model:ir.model.fields.selection,name:it_outsource.selection__it_outsource_contract__state__active
+msgid "Active"
+msgstr "Активний"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__activity_ids
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__activity_ids
+msgid "Activities"
+msgstr "Активності"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__activity_exception_decoration
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Позначка винятку активності"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__activity_state
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__activity_state
+msgid "Activity State"
+msgstr "Стан активності"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__activity_type_icon
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Іконка типу активності"
+
+#. module: it_outsource
+#: model:ir.ui.menu,name:it_outsource.menu_service_report_root
+msgid "Acts"
+msgstr "Акти"
+
+#. module: it_outsource
+#: model_terms:ir.actions.act_window,help:it_outsource.it_outsource_action_server
+msgid "Add your first server"
+msgstr "Додайте свій перший сервер"
+
+#. module: it_outsource
+#: model:res.groups,name:it_outsource.group_rental_admin
+msgid "Administrator"
+msgstr "Адміністратор"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__amount
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_line__amount
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_payment__amount
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act_line__subtotal
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_server_rental_invoice_document
+msgid "Amount"
+msgstr "Сума"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_payment_kanban
+msgid "Amount:"
+msgstr "Сума:"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__message_attachment_count
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__message_attachment_count
+msgid "Attachment Count"
+msgstr "Кількість прикріплень"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__residual
+msgid "Balance Due"
+msgstr "Залишок до сплати"
+
+#. module: it_outsource
+#: model:ir.model.fields.selection,name:it_outsource.selection__it_outsource_payment__payment_method__bank
+msgid "Bank Transfer"
+msgstr "Банківський переказ"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_product__cpu_count
+msgid "CPU Count"
+msgstr "Кількість процесорів"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_invoice_wizard_form
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. module: it_outsource
+#: model:ir.model.fields.selection,name:it_outsource.selection__it_outsource_contract__state__cancelled
+#: model:ir.model.fields.selection,name:it_outsource.selection__it_outsource_invoice__state__cancelled
+msgid "Cancelled"
+msgstr "Скасовано"
+
+#. module: it_outsource
+#: model:ir.model.fields.selection,name:it_outsource.selection__it_outsource_payment__payment_method__cash
+msgid "Cash"
+msgstr "Готівка"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__partner_id
+msgid "Client"
+msgstr "Клієнт"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_res_partner__rental_client_since
+#: model:ir.model.fields,field_description:it_outsource.field_res_users__rental_client_since
+msgid "Client Since"
+msgstr "Клієнт з"
+
+#. module: it_outsource
+#: model:ir.model,name:it_outsource.model_res_partner
+msgid "Contact"
+msgstr "Контакт"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__contract_id
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act__contract_id
+msgid "Contract"
+msgstr "Договір"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__number
+msgid "Contract Number"
+msgstr "Номер договору"
+
+#. module: it_outsource
+#: model:ir.actions.act_window,name:it_outsource.action_contract
+#: model:ir.ui.menu,name:it_outsource.menu_contract_action
+#: model:ir.ui.menu,name:it_outsource.menu_server_rental_contracts
+msgid "Contracts"
+msgstr "Договори"
+
+#. module: it_outsource
+#: model_terms:ir.actions.act_window,help:it_outsource.action_service_report
+msgid "Creat your first act"
+msgstr "Створіть свій перший акт"
+
+#. module: it_outsource
+#: model_terms:ir.actions.act_window,help:it_outsource.action_contract
+msgid "Create your first contract"
+msgstr "Створіть свій перший договір"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__create_uid
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__create_uid
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_line__create_uid
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_wizard__create_uid
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_payment__create_uid
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_product__create_uid
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act__create_uid
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act_line__create_uid
+msgid "Created by"
+msgstr "Створено"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__create_date
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__create_date
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_line__create_date
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_wizard__create_date
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_payment__create_date
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_product__create_date
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act__create_date
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act_line__create_date
+msgid "Created on"
+msgstr "Створено"
+
+#. module: it_outsource
+#: model:ir.model.fields.selection,name:it_outsource.selection__it_outsource_payment__payment_method__card
+msgid "Credit Card"
+msgstr "Кредитна картка"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__currency_id
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_product__currency_id
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act__currency_id
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act_line__currency_id
+msgid "Currency"
+msgstr "Валюта"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_payment_kanban
+msgid "Date:"
+msgstr "Дата:"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_wizard__days_to_expire
+msgid "Days to Expire"
+msgstr "Днів до закінчення"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_line__description
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act_line__name
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_server_rental_invoice_document
+msgid "Description"
+msgstr "Опис"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act__description
+msgid "Description of Services"
+msgstr "Опис послуг"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_product__disk_space_gb
+msgid "Disk Space (GB)"
+msgstr "Дисковий простір (ГБ)"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__display_name
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__display_name
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_line__display_name
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_wizard__display_name
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_payment__display_name
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_product__display_name
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act__display_name
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act_line__display_name
+msgid "Display Name"
+msgstr "Назва для відображення"
+
+#. module: it_outsource
+#: model:ir.model.fields.selection,name:it_outsource.selection__it_outsource_contract__state__draft
+#: model:ir.model.fields.selection,name:it_outsource.selection__it_outsource_invoice__state__draft
+msgid "Draft"
+msgstr "Чернетка"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__due_date
+msgid "Due Date"
+msgstr "Термін оплати"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__end_date
+msgid "End Date"
+msgstr "Дата закінчення"
+
+#. module: it_outsource
+#: model:ir.model.fields.selection,name:it_outsource.selection__it_outsource_contract__state__expired
+msgid "Expired"
+msgstr "Закінчився"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__message_follower_ids
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__message_follower_ids
+msgid "Followers"
+msgstr "Підписники"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__message_partner_ids
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Підписники (Партнери)"
+
+#. module: it_outsource
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_contract__activity_type_icon
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_invoice__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Іконка Font Awesome, наприклад fa-tasks"
+
+#. module: it_outsource
+#: model:ir.ui.menu,name:it_outsource.menu_invoice_wizard
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_invoice_wizard_form
+msgid "Generate Invoices"
+msgstr "Створити рахунки"
+
+#. module: it_outsource
+#: model:ir.actions.act_window,name:it_outsource.action_invoice_wizard
+msgid "Generate Monthly Invoices"
+msgstr "Створити щомісячні рахунки"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_server_rental_product_form
+msgid "Generate name"
+msgstr "Згенерувати назву"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__has_message
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__has_message
+msgid "Has Message"
+msgstr "Є повідомлення"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__id
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__id
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_line__id
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_wizard__id
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_payment__id
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_product__id
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act__id
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: it_outsource
+#: model:ir.ui.menu,name:it_outsource.menu_server_rental_root
+msgid "IT Outsource"
+msgstr "IT Аутсорсинг"
+
+#. module: it_outsource
+#: model:ir.module.category,name:it_outsource.module_category_rental
+msgid "IT outsource"
+msgstr "IT аутсорсинг"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__activity_exception_icon
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__activity_exception_icon
+msgid "Icon"
+msgstr "Іконка"
+
+#. module: it_outsource
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_contract__activity_exception_icon
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_invoice__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Іконка для позначення виняткової активності."
+
+#. module: it_outsource
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_contract__message_needaction
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_invoice__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Якщо позначено, нові повідомлення потребують вашої уваги."
+
+#. module: it_outsource
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_contract__message_has_error
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_contract__message_has_sms_error
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_invoice__message_has_error
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_invoice__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Якщо позначено, деякі повідомлення мають помилку доставки."
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_wizard__include_active
+msgid "Include Active Contracts"
+msgstr "Включити активні договори"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_wizard__include_expiring
+msgid "Include Expiring Contracts"
+msgstr "Включити договори, що закінчуються"
+
+#. module: it_outsource
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_invoice_wizard__days_to_expire
+msgid "Include contracts expiring in this many days"
+msgstr "Включити договори, що закінчуються через вказану кількість днів"
+
+#. module: it_outsource
+#: model:ir.actions.report,name:it_outsource.action_report_server_rental_invoice
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_line__invoice_id
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_payment__invoice_id
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_server_rental_invoice_document
+msgid "Invoice"
+msgstr "Рахунок"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_invoice_graph
+msgid "Invoice Analysis"
+msgstr "Аналіз рахунків"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__date
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_wizard__date
+msgid "Invoice Date"
+msgstr "Дата рахунку"
+
+#. module: it_outsource
+#: model:ir.model,name:it_outsource.model_it_outsource_invoice_wizard
+msgid "Invoice Generation Wizard"
+msgstr "Майстер генерації рахунків"
+
+#. module: it_outsource
+#: model:ir.model,name:it_outsource.model_it_outsource_invoice_line
+msgid "Invoice Line"
+msgstr "Рядок рахунку"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__line_ids
+msgid "Invoice Lines"
+msgstr "Рядки рахунку"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__name
+msgid "Invoice Number"
+msgstr "Номер рахунку"
+
+#. module: it_outsource
+#: model:ir.model,name:it_outsource.model_it_outsource_payment
+msgid "Invoice Payment"
+msgstr "Оплата рахунку"
+
+#. module: it_outsource
+#: model:ir.actions.act_window,name:it_outsource.action_invoice
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__invoice_ids
+#: model:ir.ui.menu,name:it_outsource.menu_invoice_action
+#: model:ir.ui.menu,name:it_outsource.menu_server_rental_invoices
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_contract_form
+msgid "Invoices"
+msgstr "Рахунки"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__message_is_follower
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__message_is_follower
+msgid "Is Follower"
+msgstr "Є підписником"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_res_partner__is_rental_client
+#: model:ir.model.fields,field_description:it_outsource.field_res_users__is_rental_client
+msgid "Is Rental Client"
+msgstr "Є клієнтом оренди"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__write_uid
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__write_uid
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_line__write_uid
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_wizard__write_uid
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_payment__write_uid
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_product__write_uid
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act__write_uid
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act_line__write_uid
+msgid "Last Updated by"
+msgstr "Востаннє оновив"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__write_date
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__write_date
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_line__write_date
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_wizard__write_date
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_payment__write_date
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_product__write_date
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act__write_date
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act_line__write_date
+msgid "Last Updated on"
+msgstr "Востаннє оновлено"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__message_has_error
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__message_has_error
+msgid "Message Delivery error"
+msgstr "Помилка доставки повідомлення"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__message_ids
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__message_ids
+msgid "Messages"
+msgstr "Повідомлення"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_payment_kanban
+msgid "Method:"
+msgstr "Метод:"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__monthly_total
+msgid "Monthly Total"
+msgstr "Щомісячний підсумок"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__my_activity_date_deadline
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Мій крайній термін активності"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__name
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_product__name
+msgid "Name"
+msgstr "Назва"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__activity_date_deadline
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Крайній термін наступної активності"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__activity_summary
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__activity_summary
+msgid "Next Activity Summary"
+msgstr "Підсумок наступної активності"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__activity_type_id
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__activity_type_id
+msgid "Next Activity Type"
+msgstr "Тип наступної дії"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_server_rental_invoice_document
+msgid "No service lines available."
+msgstr "Немає доступних рядків послуг."
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__notes
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_payment__notes
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_contract_form
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_payment_form
+msgid "Notes"
+msgstr "Примітки"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__message_needaction_counter
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Кількість дій"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__message_has_error_counter
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__message_has_error_counter
+msgid "Number of errors"
+msgstr "Кількість помилок"
+
+#. module: it_outsource
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_contract__message_needaction_counter
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_invoice__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Кількість повідомлень, які потребують дії"
+
+#. module: it_outsource
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_contract__message_has_error_counter
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_invoice__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Кількість повідомлень з помилкою доставки"
+
+#. module: it_outsource
+#: model:ir.model.fields.selection,name:it_outsource.selection__it_outsource_payment__payment_method__other
+msgid "Other"
+msgstr "Інше"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__paid_amount
+msgid "Paid Amount"
+msgstr "Оплачена сума"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_payment__date
+msgid "Payment Date"
+msgstr "Дата оплати"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_payment__payment_method
+msgid "Payment Method"
+msgstr "Метод оплати"
+
+#. module: it_outsource
+#: model:ir.actions.act_window,name:it_outsource.action_payment
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__payment_ids
+#: model:ir.ui.menu,name:it_outsource.menu_payment_action
+#: model:ir.ui.menu,name:it_outsource.menu_server_rental_payments
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_invoice_form
+msgid "Payments"
+msgstr "Платежі"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_product__price
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act_line__price_unit
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_server_rental_invoice_document
+msgid "Price"
+msgstr "Ціна"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_service_report_form
+msgid "Print PDF"
+msgstr "Друк PDF"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_server_rental_invoice_document
+msgid "Printed:"
+msgstr "Надруковано:"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_line__product_id
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_server_rental_invoice_document
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_server_rental_product_form
+msgid "Product"
+msgstr "Продукт"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_line__quantity
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act_line__quantity
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_server_rental_invoice_document
+msgid "Quantity"
+msgstr "Кількість"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_product__ram_gb
+msgid "RAM (GB)"
+msgstr "ОЗП (ГБ)"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_res_partner__rental_contract_ids
+#: model:ir.model.fields,field_description:it_outsource.field_res_users__rental_contract_ids
+msgid "Rental Contracts"
+msgstr "Контракти оренди"
+
+#. module: it_outsource
+#: model:ir.model,name:it_outsource.model_it_outsource_invoice
+msgid "Rental Invoice"
+msgstr "Рахунок оренди"
+
+#. module: it_outsource
+#: model:mail.template,subject:it_outsource.email_template_rental_invoice
+msgid "Rental Invoice - ${object.name}"
+msgstr "Рахунок оренди - ${object.name}"
+
+#. module: it_outsource
+#: model:mail.template,name:it_outsource.email_template_rental_invoice
+msgid "Rental Invoice Email"
+msgstr "Лист з рахунком оренди"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_res_partner__rental_notes
+#: model:ir.model.fields,field_description:it_outsource.field_res_users__rental_notes
+msgid "Rental Notes"
+msgstr "Примітки по оренді"
+
+#. module: it_outsource
+#: model:ir.module.category,description:it_outsource.module_category_rental
+msgid "Rental Services"
+msgstr "Послуги оренди"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act__report_date
+msgid "Report Date"
+msgstr "Дата акту"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act__name
+msgid "Report Name"
+msgstr "Назва акту"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__activity_user_id
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__activity_user_id
+msgid "Responsible User"
+msgstr "Відповідальний користувач"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__message_has_sms_error
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Помилка доставки SMS"
+
+#. module: it_outsource
+#: model:ir.model.fields.selection,name:it_outsource.selection__it_outsource_invoice_line__product_type__server
+#: model:ir.model.fields.selection,name:it_outsource.selection__it_outsource_product__type__server
+msgid "Server"
+msgstr "Сервер"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_partner_form_inherit
+msgid "Server Rental"
+msgstr "Оренда серверів"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_server_rental_product_form
+msgid "Server Specifications"
+msgstr "Характеристики сервера"
+
+#. module: it_outsource
+#: model:ir.model,name:it_outsource.model_it_outsource_product
+msgid "Server or Service"
+msgstr "Сервер або послуга"
+
+#. module: it_outsource
+#: model:ir.actions.act_window,name:it_outsource.it_outsource_action_server
+msgid "Servers"
+msgstr "Сервери"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_contract_form
+msgid "Servers and Services"
+msgstr "Сервери та послуги"
+
+#. module: it_outsource
+#: model:ir.model.fields.selection,name:it_outsource.selection__it_outsource_invoice_line__product_type__service
+#: model:ir.model.fields.selection,name:it_outsource.selection__it_outsource_product__type__service
+msgid "Service"
+msgstr "Послуга"
+
+#. module: it_outsource
+#: model:ir.model,name:it_outsource.model_it_outsource_service_act_line
+msgid "Service Act Line"
+msgstr "Рядок акту послуг"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__service_report_ids
+msgid "Service Reports"
+msgstr "Акти виконаних послуг"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__product_ids
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act__line_ids
+#: model:ir.ui.menu,name:it_outsource.menu_server_action
+#: model:ir.ui.menu,name:it_outsource.menu_server_rental_servers
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_server_rental_invoice_document
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_invoice_form
+msgid "Services"
+msgstr "Послуги"
+
+#. module: it_outsource
+#: model:ir.model,name:it_outsource.model_it_outsource_contract
+msgid "Services/Rental Contract"
+msgstr "Контракт на послуги/оренду"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__start_date
+msgid "Start Date"
+msgstr "Дата початку"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__state
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__state
+msgid "Status"
+msgstr "Статус"
+
+#. module: it_outsource
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_contract__activity_state
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_invoice__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Статус на основі дій\n"
+"Протерміновано: Дата вже пройшла\n"
+"Сьогодні: Дія запланована на сьогодні\n"
+"Заплановано: Майбутні дії."
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_invoice_search
+msgid "This Month"
+msgstr "Цього місяця"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_invoice_search
+msgid "This Year"
+msgstr "Цього року"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act__amount
+msgid "Total Amount"
+msgstr "Загальна сума"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_line__product_type
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_product__type
+msgid "Type"
+msgstr "Тип"
+
+#. module: it_outsource
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_contract__activity_exception_decoration
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_invoice__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Тип виняткової дії в записі."
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_service_act_line__unit
+msgid "Unit"
+msgstr "Одиниця"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice_line__price_unit
+msgid "Unit Price"
+msgstr "Ціна за одиницю"
+
+#. module: it_outsource
+#: model:res.groups,name:it_outsource.group_rental_user
+msgid "User"
+msgstr "Користувач"
+
+#. module: it_outsource
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_contract__website_message_ids
+#: model:ir.model.fields,field_description:it_outsource.field_it_outsource_invoice__website_message_ids
+msgid "Website Messages"
+msgstr "Повідомлення сайту"
+
+#. module: it_outsource
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_contract__website_message_ids
+#: model:ir.model.fields,help:it_outsource.field_it_outsource_invoice__website_message_ids
+msgid "Website communication history"
+msgstr "Історія комунікацій із сайтом"
+
+#. module: it_outsource
+#: model:ir.actions.report,name:it_outsource.action_report_service_report
+#: model:ir.model,name:it_outsource.model_it_outsource_service_act
+msgid "Work Completion Certificate"
+msgstr "Акт виконаних послуг"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.view_service_report_form
+msgid "Work Completion Certificates"
+msgstr "Акти виконаних послуг"
+
+#. module: it_outsource
+#: model:ir.actions.act_window,name:it_outsource.action_service_report
+msgid "Work comletion certificate"
+msgstr "Акт виконаних послуг"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_service_report_document
+msgid "___________________"
+msgstr "___________________"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_server_rental_invoice_document
+msgid "|\n City:"
+msgstr "| Місто:"
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_service_report_document
+msgid "Акт надання послуг"
+msgstr ""
+
+#. module: it_outsource
+#: model:ir.ui.menu,name:it_outsource.menu_service_report
+msgid "Акти"
+msgstr ""
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_service_report_document
+msgid "Кіл-сть"
+msgstr ""
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_service_report_document
+msgid "Найменування робіт, послуг"
+msgstr ""
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_service_report_document
+msgid "Од."
+msgstr ""
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_service_report_document
+msgid "Сума"
+msgstr ""
+
+#. module: it_outsource
+#: model_terms:ir.ui.view,arch_db:it_outsource.report_service_report_document
+msgid "Ціна"
+msgstr ""

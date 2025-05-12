@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <data noupdate="1">
-        <!-- Security Groups -->
-        <record id="group_rental_user" model="res.groups">
-            <field name="name">User</field>
-            <field name="category_id" ref="it_outsource.module_category_rental"/>
-        </record>
+<odoo noupdate="1">
+    <!-- Security Groups -->
+    <record id="group_rental_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="it_outsource.module_category_rental"/>
+    </record>
 
-        <record id="group_rental_admin" model="res.groups">
-            <field name="name">Administrator</field>
-            <field name="category_id" ref="it_outsource.module_category_rental"/>
-            <field name="implied_ids" eval="[(4, ref('group_rental_user'))]"/>
-        </record>
-    </data>
+    <record id="group_rental_admin" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="category_id" ref="it_outsource.module_category_rental"/>
+        <field name="implied_ids" eval="[(4, ref('group_rental_user'))]"/>
+    </record>
 </odoo>

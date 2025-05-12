@@ -1,7 +1,6 @@
 {
     'name': 'IT Outsource',
-    'summary': 'Server Rental Management',
-    'description': 'Module for managing server rentals and it services',
+    'summary': 'IT services and Server Rental Management',
     'website': 'https://github.com/SergeyShi/odoo-modules/',
     'author': 'Serhii Shi',
     'category': 'Services',
@@ -47,4 +46,3 @@
         'static/description/image(1).png',
     ],
 }
-

@@ -8,37 +8,112 @@
         <field name="report_file">it_outsource.report_service_report_document</field>
         <field name="print_report_name">(object._get_report_base_filename())
         </field>
-<!--        <field name="attachment"/>-->
-<!--        <field name="binding_model_id" ref="model_it_outsource_act"/>-->
-<!--        <field name="binding_type">report</field>-->
+        <!--        <field name="attachment"/>-->
+        <!--        <field name="binding_model_id" ref="model_it_outsource_act"/>-->
+        <!--        <field name="binding_type">report</field>-->
     </record>
     <template id="report_service_report_document">
         <t t-call="web.html_container">
             <t t-call="web.external_layout">
                 <t t-foreach="docs" t-as="doc">
                     <div class="page">
-                        <h2>Акт виконаних послуг</h2>
+                        <h2 class="text-center">Акт надання послуг</h2>
                         <p>
                             <strong>Номер акту:</strong>
                             <t t-esc="doc.name"/>
                         </p>
                         <p>
                             <strong>Дата:</strong>
-                            <t t-esc="doc.report_date"/>
+                            <t t-esc="doc.date" t-options='{"widget": "date"}'/>
                         </p>
                         <p>
                             <strong>Клієнт:</strong>
                             <t t-esc="doc.contract_id.partner_id.name"/>
                         </p>
+
                         <p>
-                            <strong>Опис послуг:</strong>
+                            <strong>Договір:</strong>
+                            <t t-esc="doc.contract_id.name"/>
+                        </p>
+
+                        <p>
+                            <strong>Надані послуги:</strong>
+                        </p>
+
+                        <table class="table table-sm table-bordered" style="width: 100%; font-size: 12px;">
+                            <thead style="background-color: #e0e0e0;">
+                                <tr>
+                                    <th style="width: 5%;">№</th>
+                                    <th style="width: 45%;">Найменування робіт, послуг</th>
+                                    <th style="width: 10%;">Кіл-сть</th>
+                                    <th style="width: 10%;">Од.</th>
+                                    <th style="width: 15%;" class="text-end">Ціна</th>
+                                    <th style="width: 15%;" class="text-end">Сума</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="enumerate(doc.line_ids)" t-as="line_tuple">
+                                    <t t-set="idx" t-value="line_tuple[0]"/>
+                                    <t t-set="line" t-value="line_tuple[1]"/>
+                                    <tr>
+                                        <td>
+                                            <t t-esc="idx + 1"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="line.product_id"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="line.quantity"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="line.unit"/>
+                                        </td>
+                                        <td class="text-end">
+                                            <t t-esc="line.price"
+                                               t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                        </td>
+                                        <td class="text-end">
+                                            <t t-esc="line.subtotal"
+                                               t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+
+                        <p class="text-end">
+                            <strong>Всього:</strong>
+                            <span t-field="doc.amount_total"
+                                  t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                        </p>
+
+                        <p>
+                            <strong>Опис:</strong>
                         </p>
                         <p t-esc="doc.description"/>
-                        <p>
-                            <strong>Сума:</strong>
-                            <t t-esc="doc.amount"/>
-                            <t t-esc="doc.currency_id.name"/>
-                        </p>
+
+                        <br/>
+                        <br/>
+                        <div class="row mt-5">
+                            <div class="col-6">
+                                <p>
+                                    <strong>Виконавець:</strong>
+                                </p>
+                                <p>___________________</p>
+                                <p>
+                                    <t t-esc="doc.env.user.name"/>
+                                </p>
+                            </div>
+                            <div class="col-6">
+                                <p>
+                                    <strong>Замовник:</strong>
+                                </p>
+                                <p>___________________</p>
+                                <p>
+                                    <t t-esc="doc.contract_id.partner_id.name"/>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </t>
             </t>

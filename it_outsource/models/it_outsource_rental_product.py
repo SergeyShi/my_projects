@@ -1,47 +1,84 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
 
 
 class RentalProduct(models.Model):
+    """Rental product model for IT outsourcing.
+    This class represents a product that can be rented out to clients.
+    It includes information about the product specifications, rental price,
+    and availability status.
+    """
     _name = 'it.outsource.product'
-    _description = 'Server or Service'
+    _description = 'Rental and Services'
 
-    name = fields.Char(string='Name')
-    type = fields.Selection([
+    name = fields.Char(
+        required=True,
+        help='Name of the rental product'
+    )
+
+    product_type = fields.Selection([
         ('server', 'Server'),
         ('service', 'Service')
-    ], string='Type', required=True)
-
-    price = fields.Monetary(
-        string='Price',
+    ], string='Type',
         required=True,
-        currency_field='currency_id'
+        help='Type of the product (server or service)')
+
+    price = fields.Float(
+        required=True,
+        help='Monthly rental price'
     )
 
-    currency_id = fields.Many2one(
-        'res.currency',
-        string='Currency',
-        default=lambda self: self.env.company.currency_id.id
-    )
-
-    #    Технічні характеристики для серверів
     cpu_count = fields.Integer(string='CPU Count')
     ram_gb = fields.Float(string='RAM (GB)')
     disk_space_gb = fields.Float(string='Disk Space (GB)')
 
-    def action_generate_name(self):
-        self.ensure_one()
-        if self.type == 'server':
-            self.name = f"Сервер {self.cpu_count} CPU, {self.ram_gb} ГБ RAM"
-        else:
-            self.name = f"Послуга {self.price} {self.currency_id.symbol or ''}"
+    state = fields.Selection([
+        ('available', 'Available'),
+        ('rented', 'Rented'),
+        ('maintenance', 'Maintenance')
+    ], string='Status',
+        default='available',
+        help='Current status of the product')
 
-        self.env['ir.ui.view'].invalidate_model(['name'])
-        return {
-            'type': 'ir.actions.client',
-            'tag': 'reload_context',
-            # 'params': {
-            #     'message': 'Назву згенеровано!',
-            #     'type': 'success',
-            #     'sticky': False,
-            # }
-        }
+    contract_ids = fields.Many2many(
+        comodel_name='it.outsource.contract',
+        string='Contracts',
+        help='Contracts where this product is used'
+    )
+
+    @api.constrains('price')
+    def _check_price(self):
+        """Validate the product price.
+        This method ensures that the price is positive.
+        Raises:
+            ValidationError: If the price is negative or zero
+        """
+        for product in self:
+            if product.price <= 0:
+                raise ValidationError(_('Price must be positive.'))
+
+    @api.onchange('cpu_count', 'ram_gb', 'product_type')
+    def _onchange_generate_name(self):
+        for record in self:
+            if record.product_type == 'server':
+                record.name = f"Server {record.cpu_count} CPU, {record.ram_gb} ГБ RAM"
+            else:
+                record.name = "Service"
+
+    def action_rent(self):
+        """Mark the product as rented.
+        This method changes the state of the product to 'rented'.
+        """
+        self.write({'state': 'rented'})
+
+    def action_return(self):
+        """Mark the product as available.
+        This method changes the state of the product to 'available'.
+        """
+        self.write({'state': 'available'})
+
+    def action_maintenance(self):
+        """Mark the product as under maintenance.
+        This method changes the state of the product to 'maintenance'.
+        """
+        self.write({'state': 'maintenance'})
