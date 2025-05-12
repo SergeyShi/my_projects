@@ -98,7 +98,7 @@ class InvoiceWizard(models.TransientModel):
             # Add products/services from contract to invoice lines
             for product in contract.product_ids:
                 line_vals = {
-                    'product_type': product.type,
+                    'product_type': product.product_type,
                     'product_id': product.id,
                     'quantity': 1,
                     'price_unit': product.price,

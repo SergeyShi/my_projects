@@ -9,6 +9,7 @@ access_invoice_line_user,it.outsource.invoice.line.user,model_it_outsource_invoi
 access_invoice_line_admin,it.outsource.invoice.line.admin,model_it_outsource_invoice_line,group_rental_admin,1,1,1,1
 access_payment_user,it.outsource.payment.user,model_it_outsource_payment,group_rental_user,1,0,0,0
 access_payment_admin,it.outsource.payment.admin,model_it_outsource_payment,group_rental_admin,1,1,1,1
-access_invoice_wizard,access_invoice_wizard,model_it_outsource_invoice_wizard,base.group_user,1,1,1,0
+access_invoice_wizard_user,access_invoice_wizard,model_it_outsource_invoice_wizard,group_rental_user,1,1,0,0
+access_invoice_wizard_admin,access_invoice_wizard,model_it_outsource_invoice_wizard,group_rental_admin,1,1,1,1
 access_service_act_admin,it.outsource.service.act,model_it_outsource_service_act,group_rental_admin,1,1,1,1
 access_service_act_line_admin,it.outsource.service.act.line,model_it_outsource_service_act_line,group_rental_admin,1,1,1,1

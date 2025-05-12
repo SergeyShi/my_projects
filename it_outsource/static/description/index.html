@@ -1,300 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Outsource Module Documentation</title>
+    <title>IT Outsourcing Module</title>
     <style>
-        :root {
-        --primary-color: #2c3e50;
-        --secondary-color: #3498db;
-        --accent-color: #e74c3c;
-        --text-color: #333;
-        --light-bg: #f8f9fa;
-        --border-color: #dee2e6;
-        }
-
-        * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        }
-
         body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        color: var(--text-color);
-        background-color: var(--light-bg);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
         }
-
-        .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
+        .banner {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-
-        header {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 2rem 0;
-        text-align: center;
-        margin-bottom: 2rem;
+        .banner h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
-
-        h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
+        .banner p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
-
-        h2 {
-        color: var(--primary-color);
-        margin: 2rem 0 1rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 2px solid var(--secondary-color);
+        .content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
-        h3 {
-        color: var(--secondary-color);
-        margin: 1.5rem 0 1rem;
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
         }
-
-        .overview {
-        background-color: white;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        margin-bottom: 2rem;
+        .feature {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
         }
-
-        .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin: 2rem 0;
-        }
-
-        .feature-card {
-        background-color: white;
-        padding: 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .feature-card h3 {
-        color: var(--secondary-color);
-        margin-bottom: 1rem;
-        }
-
-        .feature-card ul {
-        list-style-position: inside;
-        margin-left: 1rem;
-        }
-
-        .feature-card li {
-        margin-bottom: 0.5rem;
-        }
-
-        .installation, .configuration, .usage {
-        background-color: white;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        margin-bottom: 2rem;
-        }
-
-        .steps {
-        list-style-type: none;
-        counter-reset: step-counter;
-        }
-
-        .steps li {
-        margin-bottom: 1rem;
-        padding-left: 2rem;
-        position: relative;
-        }
-
-        .steps li::before {
-        counter-increment: step-counter;
-        content: counter(step-counter);
-        position: absolute;
-        left: 0;
-        background-color: var(--secondary-color);
-        color: white;
-        width: 1.5rem;
-        height: 1.5rem;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.9rem;
-        }
-
-        .security, .support {
-        background-color: white;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        margin-bottom: 2rem;
-        }
-
-        footer {
-        text-align: center;
-        padding: 2rem 0;
-        background-color: var(--primary-color);
-        color: white;
-        margin-top: 2rem;
-        }
-
-        .contact-info {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-top: 1rem;
-        }
-
-        .contact-info a {
-        color: white;
-        text-decoration: none;
-        }
-
-        .contact-info a:hover {
-        text-decoration: underline;
+        .feature h3 {
+            color: #2c3e50;
+            margin-top: 0;
         }
     </style>
 </head>
 <body>
-<header>
-    <div class="container">
-        <h1>IT Outsource Module</h1>
-        <p>Comprehensive IT Service Management Solution</p>
+    <div class="banner">
+        <h1>IT Outsourcing Module</h1>
+        <p>Streamline your IT service management with our comprehensive outsourcing solution</p>
     </div>
-</header>
-
-<div class="container">
-    <section class="overview">
-        <h2>Overview</h2>
-        <p>The IT Outsource module is a comprehensive solution for managing IT outsourcing services, server rentals, and
-            service contracts. It provides a complete system for handling client relationships, service delivery, and
-            financial operations in the IT outsourcing industry.</p>
-    </section>
-
-    <section class="features">
-        <h2>Features</h2>
-        <div class="features-grid">
-            <div class="feature-card">
+    
+    <div class="content">
+        <div class="features">
+            <div class="feature">
                 <h3>Contract Management</h3>
-                <ul>
-                    <li>Create and manage service contracts</li>
-                    <li>Track contract status</li>
-                    <li>Set contract dates</li>
-                    <li>Manage multiple services</li>
-                    <li>Automatic expiration handling</li>
-                </ul>
+                <p>Easily manage client contracts, track services, and monitor contract status</p>
             </div>
-
-            <div class="feature-card">
-                <h3>Server Rental</h3>
-                <ul>
-                    <li>Manage server inventory</li>
-                    <li>Track configurations</li>
-                    <li>Set rental prices</li>
-                    <li>Monitor usage</li>
-                </ul>
+            <div class="feature">
+                <h3>Service Tracking</h3>
+                <p>Keep track of all services provided to clients with detailed service acts</p>
             </div>
-
-            <div class="feature-card">
-                <h3>Service Management</h3>
-                <ul>
-                    <li>Create service acts</li>
-                    <li>Record delivery details</li>
-                    <li>Generate certificates</li>
-                    <li>Track service costs</li>
-                </ul>
+            <div class="feature">
+                <h3>Invoice Generation</h3>
+                <p>Automatically generate invoices based on contracts and services</p>
             </div>
-
-            <div class="feature-card">
-                <h3>Invoicing</h3>
-                <ul>
-                    <li>Automatic invoice generation</li>
-                    <li>Multiple payment methods</li>
-                    <li>Payment tracking</li>
-                    <li>Email notifications</li>
-                </ul>
+            <div class="feature">
+                <h3>Payment Processing</h3>
+                <p>Track payments, manage payment methods, and monitor payment status</p>
+            </div>
+            <div class="feature">
+                <h3>Product Management</h3>
+                <p>Manage server and service products with detailed specifications</p>
+            </div>
+            <div class="feature">
+                <h3>Reporting</h3>
+                <p>Generate comprehensive reports on contracts, services, and payments</p>
             </div>
         </div>
-    </section>
-
-    <section class="installation">
-        <h2>Installation</h2>
-        <ol class="steps">
-            <li>Install the module through Odoo Apps</li>
-            <li>Update the module list</li>
-            <li>Install the "IT Outsource" module</li>
-        </ol>
-    </section>
-
-    <section class="configuration">
-        <h2>Configuration</h2>
-        <h3>User Access Rights</h3>
-        <ul>
-            <li>Administrator: Full access to all features</li>
-            <li>User: Basic access to contracts and services</li>
-        </ul>
-
-        <h3>Email Templates</h3>
-        <ul>
-            <li>Invoice notifications</li>
-            <li>Contract notifications</li>
-            <li>Service act notifications</li>
-        </ul>
-    </section>
-
-    <section class="usage">
-        <h2>Usage Guide</h2>
-
-        <h3>Creating a New Contract</h3>
-        <ol class="steps">
-            <li>Go to Contracts > New</li>
-            <li>Select the client</li>
-            <li>Set contract dates</li>
-            <li>Add services and servers</li>
-            <li>Confirm the contract</li>
-        </ol>
-
-        <h3>Generating Invoices</h3>
-        <ol class="steps">
-            <li>Go to Invoices > Generate Monthly Invoices</li>
-            <li>Select the date range</li>
-            <li>Choose contracts to include</li>
-            <li>Generate invoices</li>
-        </ol>
-    </section>
-
-    <section class="security">
-        <h2>Security Features</h2>
-        <ul>
-            <li>Role-based access control</li>
-            <li>Data encryption for sensitive information</li>
-            <li>Audit trail for all operations</li>
-            <li>Secure payment processing</li>
-        </ul>
-    </section>
-
-    <section class="support">
-        <h2>Support</h2>
-        <p>For support and assistance, please contact:</p>
-        <div class="contact-info">
-            <a href="mailto:support@example.com">support@example.com</a>
-            <a href="tel:+380501234567">+380501234567</a>
-        </div>
-    </section>
-</div>
-
-<footer>
-    <div class="container">
-        <p>© 2024 IT Outsource Team. All rights reserved.</p>
-        <p>Licensed under the Odoo Proprietary License v1.0</p>
     </div>
-</footer>
 </body>
-</html>
+</html> 
